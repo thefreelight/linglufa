@@ -1,0 +1,42 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    	<main class="main">
+
+		<!-- start login or register  -->
+		<section class="maan-user-account-section">
+			<div class="container">
+				<div class="maan-user-account-wraper wow fadeInUp">
+					<div class="user-header-area">
+						<a href="index.html" class="logo d-none d-sm-block"><img src="/static/img/logo/logo.png" alt="Logo"></a>
+					</div>
+					  <div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade active show" id="Login" role="tabpanel" aria-labelledby="Login-tab">
+							<form method="post" >
+								<div class="maan-input-group">
+									<input name="username" value="{{ login_form.username.value }}" type="text" placeholder="请输入用户名">
+								</div>
+								<div class="maan-input-group">
+									<input name="password" value="{{ login_form.password.value }}" type="password" placeholder="请输入密码">
+									<span><i class="fa fa-eye-slash"></i></span>
+								</div>
+                                <div class="maan-input-group">
+                                    请输入验证码：
+                                    {{ login_form.captcha }}
+                                </div>
+								<span class="forget-pass">忘记密码 ? <a href="account.html">点击这里</a></span>
+                                <div class="{% if login_form.errors or msg %}alert alert-danger{% endif %}">{% if login_form.errors %}{% for key, error in login_form.errors.items %}{{ error }}{% endfor %}{% else %}{{ msg }}{% endif %}</div>
+								<input href="{% url 'login' %}" class="maan-primary-btn maan-btn" type="submit" value="登陆">
+								<span class="forget-pass m-0">还没有一个账号 ？ <a href="/reg">点击创建</a></span>
+                                 {% csrf_token %}
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end login or register  -->
+
+	</main>
+{% endblock %}

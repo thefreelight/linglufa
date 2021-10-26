@@ -1,0 +1,38 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    	<main class="main">
+		<section class="maan-user-account-section">
+			<div class="container">
+				<div class="maan-user-account-wraper wow fadeInUp">
+					<div class="user-header-area">
+						<a href="index.html" class="logo d-none d-sm-block"><img src="/static/img/logo/logo.png" alt=""></a>
+					</div>
+						<div class="tab-pane fade active show" id="registration" role="tabpanel" aria-labelledby="registration-tab">
+							<form method="post">
+								<div class="maan-input-group">
+									<input name="username" value="{{ reg_form.username.value }}" type="text" placeholder="请输入用户名">
+								</div>
+								<div class="maan-input-group">
+									<input name="password" value="{{ register_get_form.password.value }}" type="password" placeholder="请输入密码">
+									<span><i class="fa fa-eye-slash"></i></span>
+								</div>
+                                <div class="maan-input-group">
+                                    请输入验证码：
+                                    {{ register_get_form.captcha }}
+                                </div>
+                                <div class="{% if reg_form.errors or msg %}alert alert-danger{% endif %}">{% if reg_form.errors %}{% for key, error in reg_form.errors.items %}{{ error }}{% endfor %}{% else %}{{ msg }}{% endif %}</div>
+								<input href="{% url 'reg' %}" class="maan-primary-btn maan-btn" type="submit" value="立即注册">
+								<span class="forget-pass m-0">还没有一个账号 ? <a href="#">点击创建</a></span>
+                                {% csrf_token %}
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+        <!-- End Register -->
+
+	</main>
+{% endblock %}

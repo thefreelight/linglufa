@@ -1,0 +1,421 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<main class="main">
+
+		<!-- Start Slider
+		============================================= -->
+		<div class="hero-section">
+			<div class="hero-single bg-2">
+                <div class="hero-shape">
+                    <img src="{% static 'img/header/header-vc.png' %}" alt="MaanSoft">
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6">
+                             <div class="hero-content">
+                                <h2 class="hero-title">
+                                    东半球第二高质量<br />
+                                    营销软件 和 <br />
+                                    营销课程
+                                </h2>
+                                 <p>
+                                     我要扼住命运的咽喉，决不能让命运使我屈服。
+                                 </p>
+                                <div class="hero-btn">
+                                    <a href="product.html" class="btn-4">营销软件</a>
+                                    <a href="app.html" class="btn-5">营销课程</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6">
+                            <div class="hero-right-pic wow fadeInRight">
+                                <img src="{% static 'img/header/hero-left-pic.png' %}" alt="MaanSoft">
+                                <a href="https://www.youtube.com/watch?v=SS3zZ7Ma83M" data-fancybox class="item popup-youtube">
+                                    <i class="play-bt"><img src="{% static 'img/icons/play.png' %}" alt="MaanSoft"></i>
+                                </a>
+                                <div class="hero-social-move">
+									<ul class="hero-social">
+										<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+										<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+										<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+									</ul>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!-- End Slider -->
+
+        <!-- Start work
+		============================================= -->
+		<div id="portfolio" class="portfolio-area bg-white de-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-xl-6 offset-xl-3">
+						<div class="site-title text-center">
+							<h2>我们的高级营销软件</h2>
+                            <p class="mb-0">
+                                我愿意深深地扎入生活，吮尽生活的骨髓，过得扎实，简单，把一切不属于生活的内容剔除得干净利落，把生活逼到绝处，用最基本的形式，简单，简单，再简单。
+                            </p>
+						</div>
+					</div>
+				</div>
+            </div>
+			<div class="container-fluid c-pd">
+				<div class="portfolio-items-area">
+					<div class="row">
+						<div class="col-xl-12 portfolio-content">
+							<div class="mix-item-menu active-theme text-center">
+								<button class="active" data-filter="*">全部</button>
+								<button data-filter=".development">营销软件</button>
+								<button data-filter=".design">营销课程</button>
+							</div>
+							<!-- End Mixitup Nav-->
+							<div class="magnific-mix-gallery masonary">
+								<div id="portfolio-grid" class="portfolio-items">
+                                    {% for item in software %}
+									<div class="pf-item development wow fadeInUp">
+										<div class="work-box">
+											<div class="work-pic">
+												<img src="/media/{{item.image}}" alt="MaanSoft">
+												<a href="/media/{{ item.image }}" data-fancybox="gallery" class="item work-popup">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
+											</div>
+
+                                            <div class="work-desc">
+                                                <div class="work-meta">
+                                                </div>
+                                                <a href="theme-single.html">
+													<h5 class="work-title">
+														 {{ item.name }}
+													</h5>
+												</a>
+                                                <div class="work-bottom space-between">
+                                                    <div class="work-price">
+                                                        <span class="value">￥{{ item.base_price }}</span>
+                                                        <div class="price-rating d-flex align-items-center">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="work-btns">
+                                                        <ul>
+                                                            <li>已售出{{ item.fake_sales }} </li>
+                                                            <li>
+																<a href="theme-single.html" class="btn-7">预览</a>
+															</li>
+															<li>
+                                                                <a href="#" class="btn-cart">
+                                                                    <img src="{% static 'img/icons/cart-white.png' %}" alt="MaanSoft">
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+										</div>
+									</div>
+                                    {% endfor %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+                <div class="work-view text-center mt-70">
+                    <a href="product.html" class="btn-4">查看更多</a>
+                </div>
+			</div>
+		</div>
+		<!-- End Work -->
+
+
+
+        <!-- Start Services
+		============================================= -->
+        <div class="sevice-area de-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-xl-6 offset-xl-3">
+						<div class="site-title text-center">
+							<h2>我们提供的服务</h2>
+                            <p class="mb-0">
+                                既然我已经踏上这条道路，那么，任何东西都不应妨碍我沿着这条路走下去。
+                            </p>
+						</div>
+					</div>
+				</div>
+                <div class="service-wpr grid-3">
+                    {% for item in ourservice %}
+                    <div class="service-box wow fadeInRight">
+                        <div class="service-icon">
+                            <i><img src="{{ item.image }}" alt="MaanSoft"></i>
+                        </div>
+                        <div class="service-desc">
+                            <h5 class="work-title">{{ item.title }}</h5>
+                            <p class="mb-0">
+                                {{ item.desc }}
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- End Services -->
+
+        <!-- Start Why Choose Us
+		============================================= -->
+        <div class="wh-area bg-2 wh-pd de-padding">
+            <div class="container">
+                <div class="wh-wpr">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="wh-left">
+                                <h2 class="wh-title">
+                                    为什么客户选择我们？
+                                </h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                </p>
+                                <a href="about.html" class="btn-8">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="wh-right grid-2">
+                                {% for superior in oursuperior %}
+                                <div class="wh-box wow fadeInUp">
+                                    <div class="wh-icon">
+                                        <i><img src="{{ superior.image }}" alt="MaanSoft"></i>
+                                    </div>
+                                    <div class="wh-desc">
+                                        <h5 class="work-title">{{ superior.title }}</h5>
+                                        <p class="mb-0">
+                                            {{ superior.desc }}
+                                        </p>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Why Choose Us -->
+
+        <!-- Start Counter
+		============================================= -->
+		<div class="counter-area">
+			<div class="container">
+				<div class="counter-wpr counter-round grid-4 wow fadeInLeft">
+					<div class="fun-fact">
+						<span class="fun-icon">
+                            <i>
+                                <img src="{% static 'img/icons/fn-1.png' %}" alt="MaanSoft">
+                            </i>
+                        </span>
+						<div class="fun-desc">
+							<p class="timer" data-count="k"  data-to="39" data-speed="3000">39</p>
+							<span class="medium">Happy Clients</span>
+						</div>
+					</div>
+					<div class="fun-fact fun-active">
+						<span class="fun-icon">
+                            <i>
+                                <img src="{% static 'img/icons/fn-2.png' %}" alt="MaanSoft">
+                            </i>
+                        </span>
+						<div class="fun-desc">
+							<p class="timer" data-count="k" data-to="10" data-speed="3000">10</p>
+							<span class="medium">Clean Products</span>
+						</div>
+					</div>
+					<div class="fun-fact">
+						<span class="fun-icon">
+                            <i>
+                                <img src="{% static 'img/icons/fn-3.png' %}" alt="MaanSoft">
+                            </i>
+                        </span>
+						<div class="fun-desc">
+							<p class="timer" data-count="+" data-to="39" data-speed="3000">39</p>
+							<span class="medium">Expert Members</span>
+						</div>
+					</div>
+					<div class="fun-fact">
+						<span class="fun-icon">
+                            <i>
+                                <img src="{% static 'img/icons/fn-4.png' %}" alt="MaanSoft">
+                            </i>
+                        </span>
+						<div class="fun-desc">
+							<p class="timer" data-count="+" data-to="39" data-speed="3000">39</p>
+							<span class="medium">Expert Members</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Counter -->
+
+        <!-- Start Feedback
+		============================================= -->
+        <!-- End Feedback -->
+
+        <!-- Start Blog
+		============================================= -->
+        <div class="blog-area de-padding">
+            <div class="container">
+                <div class="row">
+					<div class="col-xl-6 offset-xl-3">
+						<div class="site-title text-center">
+							<h2>每天的博客和新闻</h2>
+                            <p class="mb-0">
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                            </p>
+						</div>
+					</div>
+				</div>
+                <div class="blog-wpr grid-3">
+                    <div class="blog-box wow fadeInUp">
+                        <div class="blog-pic">
+                            <a href="single.html"><img src="{% static 'img/blog/1.jpg' %}" alt="MaanSoft"></a>
+                        </div>
+                        <div class="blog-desc">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/check-list.png' %}" alt="MaanSoft"></i>
+                                        <span>09 June, 2021</span>
+                                    </li>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/comment.png' %}" alt="MaanSoft"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="single.html">
+                                <h5 class="work-title">
+                                    Quick Tips For Trusted By The Largest Apps And Games
+                                </h5>
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                            <div class="work-btn">
+                                <a href="single.html" class="btn-2">Learn More
+                                    <i>
+                                        <img src="{% static 'img/icons/long-arrow.png' %}" alt="MaanSoft">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box wow fadeInUp">
+                        <div class="blog-pic">
+                            <a href="single.html"><img src="{% static 'img/blog/2.jpg' %}" alt="MaanSoft"></a>
+                        </div>
+                        <div class="blog-desc">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/check-list.png' %}" alt="MaanSoft"></i>
+                                        <span>09 June, 2021</span>
+                                    </li>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/comment.png' %}" alt="MaanSoft"></i>
+                                        <span>03 Comments</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="single.html">
+                                <h5 class="work-title">
+                                    The Modern Rules Of Trusted By The Largest Apps And Games.
+                                </h5>
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                            <div class="work-btn">
+                                <a href="single.html" class="btn-2">Learn More
+                                    <i>
+                                        <img src="{% static 'img/icons/long-arrow.png' %}" alt="MaanSoft">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-box wow fadeInUp">
+                        <div class="blog-pic">
+                            <a href="single.html"><img src="{% static 'img/blog/3.jpg' %}" alt="MaanSoft"></a>
+                        </div>
+                        <div class="blog-desc">
+                            <div class="blog-meta">
+                                <ul>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/check-list.png' %}" alt="MaanSoft"></i>
+                                        <span>09 June, 2021</span>
+                                    </li>
+                                    <li>
+                                        <i><img src="{% static 'img/icons/comment.png' %}" alt="MaanSoft"></i>
+                                        <span>03 Comments</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="single.html">
+                                <h5 class="work-title">
+                                    How To Own Trusted By The Largest Apps And Games For Free
+                                </h5>
+                            </a>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                            </p>
+                            <div class="work-btn">
+                                <a href="single.html" class="btn-2">Learn More
+                                    <i>
+                                        <img src="{% static 'img/icons/long-arrow.png' %}" alt="MaanSoft">
+                                    </i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Blog -->
+
+        <!-- Start Partner
+		============================================= -->
+        <div class="partner-area de-pb">
+            <div class="container">
+                <div class="partner-wpr partner-sldr owl-carousel owl-theme wow fadeInRight">
+                    <div class="partner-brand">
+                        <a href="#"><img src="{% static 'img/partner/brand-1.svg' %}" alt=""></a>
+                    </div>
+                    <div class="partner-brand">
+                        <a href="#"><img src="{% static 'img/partner/brand-2.svg' %}" alt=""></a>
+                    </div>
+                    <div class="partner-brand">
+                        <a href="#"><img src="{% static 'img/partner/brand-3.svg' %}" alt=""></a>
+                    </div>
+                    <div class="partner-brand">
+                        <a href="#"><img src="{% static 'img/partner/brand-4.svg' %}" alt=""></a>
+                    </div>
+                    <div class="partner-brand">
+                        <a href="#"><img src="{% static 'img/partner/brand-5.svg' %}" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Partner -->
+
+	</main>
+
+{% endblock %}
